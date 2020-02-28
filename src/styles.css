@@ -1,0 +1,87 @@
+/*---------------------------
+    UX Annotations
+    https://codepen.io/Devoth/pen/JdBLxO
+
+    ex. <span data-ux-note="put hover text here">
+  ---------------------------*/
+/* Blink for Webkit and others
+(Chrome, Safari, Firefox, IE, ...)
+*/
+
+@-webkit-keyframes blinker {
+  from {
+    background: rgba(230, 10, 10, 1);
+  }
+  to {
+    background: rgba(200, 10, 10, 1);
+  }
+}
+.blink {
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  text-decoration: blink;
+}
+
+[data-ux-note] {
+  position: relative;
+  cursor: pointer;
+
+  display: inline-block;
+
+  outline: rgba(220, 10, 10, 0.6) solid 2px;
+  outline-offset: 2px;
+}
+
+[data-ux-note]:before {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 2em;
+
+  position: absolute;
+  top: -18px;
+  left: -22px;
+
+  display: inline-block;
+
+  width: 2em;
+  height: 2em;
+  padding: 2.3px;
+  /* background-color: rgba(220, 10, 10, 1); */
+
+  content: "UX";
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  text-align: center;
+  text-decoration: blink;
+
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+[data-ux-note]:hover:after {
+  font-weight: normal;
+
+  position: absolute;
+
+  display: inline-block;
+
+  width: 300px;
+  padding: 5px 10px;
+
+  content: "**Note**\A"attr(data-ux-note);
+  cursor: pointer;
+  white-space: pre-wrap;
+
+  color: black;
+  border-radius: 5px;
+  background-color: gold;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.15), 0 2px 0 2px rgba(0, 0, 0, 0.1);
+}
