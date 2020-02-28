@@ -8,20 +8,20 @@
 (Chrome, Safari, Firefox, IE, ...)
 */
 
-@-webkit-keyframes blinker {
+@keyframes blinker {
   from {
     background: rgba(230, 10, 10, 1);
   }
   to {
-    background: rgba(200, 10, 10, 1);
+    background: rgba(200, 10, 10, 0.4);
   }
 }
 .blink {
-  -webkit-animation-name: blinker;
-  -webkit-animation-duration: 0.6s;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
+  animation-name: blinker;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   text-decoration: blink;
 }
 
@@ -53,11 +53,11 @@
   /* background-color: rgba(220, 10, 10, 1); */
 
   content: "UX";
-  -webkit-animation-name: blinker;
-  -webkit-animation-duration: 0.8s;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
+  animation-name: blinker;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   text-align: center;
   text-decoration: blink;
 
